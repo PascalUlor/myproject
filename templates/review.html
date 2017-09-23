@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="UTF-8">
+
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    </head>
+
+    <body>
+
+      <div class="container">
+
+      <!-- MOBILE COLLAPSE -->
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo center">More Recipes</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="catalog.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Sign Out</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="catalog.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <br><br>
+
+
+      <div class="container"><!-- collections container begins -->
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+          <h1>Recipe Review</h1>
+          <!-- COLLECTION/LIST -->
+          <ul class="collection">
+            <li><a href="" class="dropdown-button collection-item" data-activates="dropdown1">Recipe 1<i class="material-icons right">arrow_drop_down</i></a></li>
+
+            <li><a href="" class="dropdown-button collection-item" data-activates="dropdown1">Recipe 2<i class="material-icons right">arrow_drop_down</i></a></li>
+
+            <li><a href="" class="dropdown-button collection-item" data-activates="dropdown1">Recipe 3<i class="material-icons right">arrow_drop_down</i></a></li>
+
+            <li><a href="" class="dropdown-button collection-item" data-activates="dropdown1">Recipe 4<i class="material-icons right">arrow_drop_down</i></a></li>
+
+            <li><a href="" class="dropdown-button collection-item" data-activates="dropdown1">Recipe 5<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+
+      </div>
+
+        <!-- DROPDOWN -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione, aliquid minima autem tempora, dolor impedit quidem tempore dolorem magnam</p></li><i class="tiny material-icons">thumbs_up_down</i>
+        </ul>
+
+
+        <!-- FIXED ACTION BUTTON -->
+        <div class="fixed-action-btn">
+          <a href="#" class="btn-floating red btn-large"><i class="large material-icons">mode_edit</i></a>
+          <ul>
+            <li><a href="review.html" class="btn-floating yellow btn-large"><i class="large material-icons">details</i></a></li>
+            <li><a href="fav.html" class="btn-floating blue btn-large"><i class="large material-icons">favorite</i></a></li>
+            <li><a href="crud.html" class="btn-floating green btn-large"><i class="large material-icons">publish</i></a></li>
+            <li><a href="#" class="btn-floating orange btn-large"><i class="large material-icons">attach_file</i></a></li>
+          </ul>
+        </div>
+
+        </div><!-- ./container ends -->
+
+      <div style="height:500px"></div>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>$('.button-collapse').sideNav();</script>
+    </body>
+  </html>

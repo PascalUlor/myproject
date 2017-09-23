@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="UTF-8">
+
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    </head>
+
+    <body>
+
+      <div class="container"><!-- ./container begins -->
+
+        <!-- MOBILE COLLAPSE -->
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">More Recipes</a>
+            <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+          </div>
+        </nav>
+
+
+        <br><br>
+
+
+        <div class="card blue-grey"><!--  card div begins -->
+            <div class="card-content white-text">
+              <span class="card-title center">Welcome</span>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione, aliquid minima autem tempora, dolor impedit quidem tempore dolorem magnam deserunt, illo. Perspiciatis, quia praesentium nihil illo asperiores dolor modi.</p>
+            </div>
+
+          <div class="card-action center"> <!--  card active div begins -->
+                <!--Sign in form-->
+              <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Sign in</a>
+
+            <form class="frm">
+
+              <div class="input-field">
+                <input type="email" id="email" class="validate">
+                <label class="active" for="email">Email</label>
+              </div>
+
+              <div class="input-field">
+                <textarea type="Password" id="Password" class="materialize-textarea"></textarea>
+                <label class="active" for="textarea">Password</label>
+              </div>
+
+              <div class="row center">
+                <a href="catalog.html" id="download-button" class="btn-large waves-effect waves-light orange">Submit</a>
+              </div>
+
+            </form>
+
+                <!--Sign in form-->
+              <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Sign up</a>
+
+            <form class="frm white">
+                <div class="input-field">
+                    <input type="text" id="name">
+                    <label class="active" for="name">Name</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" id="email" class="validate">
+                    <label class="active" for="email">Email</label>
+                </div>
+
+                <div class="input-field">
+                    <textarea type="email" id="textarea" class="materialize-textarea"></textarea>
+                    <label class="active" for="textarea">Password</label>
+                </div>
+
+                    <div class="row center">
+                        <a href="catalog.html" id="download-button" class="btn-large waves-effect waves-light orange">Submit</a>
+                    </div>
+                </form>
+
+              </div><!--  card active div begins -->
+
+        </div><!--  card div ends -->
+
+
+          <!--Images-->
+      <div class="row center">
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center light-blue-text"></h2>
+                <img src="img/1.jpg" alt="" class="responsive-img circle" alt="">
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center light-blue-text"></h2>
+                <img src="img/2.jpg" alt="" class="responsive-img circle" alt="">
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center light-blue-text"></h2>
+                <img src="img/4.jpg" alt="" class="responsive-img circle" alt="">
+              </div>
+            </div>
+        </div>
+
+      </div><!-- ./container ends -->
+
+
+      <div style="height:500px"></div>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script>$('.button-collapse').sideNav();</script>
+    </body>
+  </html>

@@ -1,0 +1,32 @@
+.btn{
+  padding: 10px 20px 10px 20px;
+  background-color: #f60000;
+  color:#ffffff;
+  text-transform:uppercase;
+  border-radius:2px;
+  width:300px;
+  margin:0px auto;
+}
+.btn:hover{
+  padding: 10px 20px 10px 20px;
+  background-color: #d80000;
+  color:#ffffff;
+  text-transform:uppercase;
+  border-radius:2px;
+}
+
+.frm{
+
+}
+
+.fr{
+
+}
+
+.sg1{
+
+}
+
+.sg2{
+
+}
