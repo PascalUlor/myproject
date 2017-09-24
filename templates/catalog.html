@@ -11,6 +11,7 @@
       
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
 
     </head>
 
@@ -54,12 +55,23 @@
           </div>
       <h1>Recipe List</h1>
         <!-- COLLECTION/LIST -->
-        <ul class="collection">
-          <li class="collection-item"><a href="#" class="collection-item">Item 1</a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 2</a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 3</a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 4</a></li>
-        </ul>
+        <table style="width:100%">
+          <tr>
+            <th>Recipe</th>
+            <th>Details</th> 
+            <th>Review</th>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>rRice</td> 
+            <td><i class="tiny material-icons">thumb_down</i></td>
+          </tr>
+          <tr>
+            <td>Desert</td>
+            <td>Beans</td> 
+            <td><i class="tiny material-icons">thumb_up</i></td>
+          </tr>
+        </table>
 
         </div><!-- collections container ends -->
 
@@ -91,10 +103,17 @@
       </div><!-- ./container ends -->
 
       
-      <div style="height:500px"></div>
+     <!-- <div style="height:500px"></div>-->
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script>$('.button-collapse').sideNav();</script>
+
+
+      <footer>
+      <p> 
+      Copyright &copy; 2017 Pascal Ulor. Do not copy or try to reproduce
+      </p>
+      </footer>
     </body>
   </html>

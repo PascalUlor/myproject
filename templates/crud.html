@@ -11,6 +11,7 @@
       
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
 
     </head>
 
@@ -46,34 +47,39 @@
       <br><br>
 
 
-      <div class="container"><!-- collections container begins -->
+      <div class="container">
           <div class="input-field">
             <input id="search" type="search" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
 
-        <h1>Recipe List</h1>
-        <!-- COLLECTION/LIST -->
-        <ul class="collection">
-          <li class="collection-item"><a href="#" class="collection-item">Item 1</a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 2</a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 3</a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 4</a></li>
-        </ul>
-      </div><!-- collections container ends -->
+        <h1 class="center">Recipe List</h1>
 
-
-      <div class="container">
-      <h1>Favorites</h1>
-        <!-- COLLECTION/LIST -->
-        <ul class="collection">
-          <li class="collection-item"><a href="#" class="collection-item">Item 1<i class="tiny material-icons">favorite</i></a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 2<i class="tiny material-icons">favorite</i></a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 3<i class="tiny material-icons">favorite</i></a></li>
-          <li class="collection-item"><a href="#" class="collection-item">Item 4<i class="tiny material-icons">favorite</i></a></li>
-        </ul>
+      <div class="container"><!-- collections container begins -->
+      <div class="card blue-grey">
+        <table id= "results" border="1">
+          <tr>
+          <th>Recipe</th>
+          <th>Details</th>
+          <th>Review</th>
+          </tr>
+        </table>
       </div>
+
+      <br>
+
+        Recipe:<br>
+        <input type="text" id="recipe" /><br>
+        Details: <br> 
+        <input type="text" id="details" /><br>
+        Review: <br>
+        <input type="text" id="review" /><br>
+        <input type="button" id ="display" value="Display" onclick="addRow()" /><br>
+
+
+      </div><!-- collections container ends -->
+        
 
       <!-- FIXED ACTION BUTTON -->
         <div class="fixed-action-btn">
@@ -88,13 +94,19 @@
 
 
       
-
-      </div><!-- ./container ends -->
-
-      <div style="height:500px"></div>
-      <!--Import jQuery before materialize.js-->
+        </div>
+     <!--   <div style="height:500px"></div>-->
+    <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
       <script>$('.button-collapse').sideNav();</script>
+
+
+      <footer>
+      <p> 
+      Copyright &copy; 2017 Pascal Ulor. Do not copy or try to reproduce
+      </p>
+      </footer>
     </body>
   </html>
