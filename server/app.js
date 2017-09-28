@@ -27,8 +27,9 @@ app.get('/api', (req, res) => {
     });
 });
 
-app.post('',(req,res)=>{
+app.post('/api',(req,res)=>{
     console.log('This is a recipe site');
+    res.send(req.body);
 });
 
 app.delete('*',(req,res)=>{
