@@ -10,6 +10,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
+//Dummy variables
+const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
+
 //Home page route
 app.get('/', (req, res) => {
     res.status(200);
@@ -18,6 +21,37 @@ app.get('/', (req, res) => {
         message: 'Welcome to More-Recipes'
     });
 });
+
+//Recipes Route
+app.get('/api/recipes', function(req, res) {
+    res.send(recipes);
+});
+ 
+app.get('/api/recipes/:id', function(req, res) {
+  let id = parseInt(req.params.id, 10);
+    let result = recipes.filter(r => r.id === id)[0];
+ 
+    if (!result) {
+        res.sendStatus(404);
+    } else {
+        res.send(result);
+    }
+});
+
+app.post('/api/recipes', function(req, res) {
+    let item = req.body;
+ console.log("item----->",item.id);
+    if (!item.id) {
+        console.log('get here')
+        return res.sendStatus(500);
+    }
+ 
+    recipes.push(item);
+ 
+    res.send('/api/recipes/' + item.id);
+});
+
+
 //API route
 app.get('/api', (req, res) => {
     res.status(200);
@@ -48,6 +82,7 @@ app.get('*', (req, res) => {
         message: 'Welcome to More-Recipes'
     });
 });
+
 
 
 //Port listener
