@@ -22,19 +22,42 @@
 
         <!-- MOBILE COLLAPSE -->
         <nav>
-          <div class="nav-wrapper">
+        <div class="nav-wrapper">
             <a href="#!" class="brand-logo center">More Recipes</a>
-            <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="left hide-on-med-and-down">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-            </ul>
-          </div>
-        </nav>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="catalog.html">Recipes</a></li>
+          </ul>
+
+          <ul class="right hide-on-med-and-down">
+            <nav><div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+      <a href="review.html" class="btn-flat waves-effect waves-light blue-grey center"><span class="white-text">search</span></a>
+    </div>
+
+          </nav>
+
+          </ul>
+
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="catalog.html">Recipes</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+              <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
 
 
         <br><br>
@@ -43,14 +66,19 @@
         <div class="card blue-grey"><!--  card div begins -->
             <div class="card-content white-text">
               <span class="card-title center">Welcome</span>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione, aliquid minima autem tempora, dolor impedit quidem tempore dolorem magnam deserunt, illo. Perspiciatis, quia praesentium nihil illo asperiores dolor modi.</p>
+                 <p>Hi and welcome! I’m Lindsay, and this little website is my internet home. I write, I cook, and I take pictures of delicious food.<br><br>On a more personal level, I’m constantly trying to learn how to be better at things that really matter, like living intentionally, appreciating people, and following Jesus.</p>
             </div>
 
           <div class="card-action center"> <!--  card active div begins -->
                 <!--Sign in form-->
-              <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Sign in</a>
+              <a href="#modal1" id="download-button" class="btn-large waves-effect waves-light orange modal-trigger">Sign in</a>
 
-            <form class="frm">
+           
+            <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Login To Enter</h4>
+            <form class="">
 
               <div class="input-field">
                 <input type="email" id="email" class="validate">
@@ -61,43 +89,27 @@
                 <textarea type="Password" id="Password" class="materialize-textarea"></textarea>
                 <label class="active" for="textarea">Password</label>
               </div>
-
+            <div class="modal-footer">
               <div class="row center">
-                <a href="catalog.html" id="download-button" class="btn-large waves-effect waves-light orange">Submit</a>
+                <a href="catalog.html" id="download-button" class="modal-action modal-close btn-large waves-effect waves-light orange">Submit</a>
               </div>
-
+            </div>
             </form>
+          </div>
+        </div>
 
-                <!--Sign in form-->
-              <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Sign up</a>
 
-            <form class="frm white">
-                <div class="input-field">
-                    <input type="text" id="name">
-                    <label class="active" for="name">Name</label>
-                </div>
+                <!--Sign up form-->
+              <a href="Signup.html" id="download-button" class="btn-large waves-effect waves-light orange">Sign up</a>
 
-                <div class="input-field">
-                    <input type="email" id="email" class="validate">
-                    <label class="active" for="email">Email</label>
-                </div>
-
-                <div class="input-field">
-                    <textarea type="email" id="textarea" class="materialize-textarea"></textarea>
-                    <label class="active" for="textarea">Password</label>
-                </div>
-
-                    <div class="row center">
-                        <a href="catalog.html" id="download-button" class="btn-large waves-effect waves-light orange">Submit</a>
-                    </div>
-                </form>
-
+             
               </div><!--  card active div begins -->
 
         </div><!--  card div ends -->
 
 
           <!--Images-->
+          <h2 class="center">Popular Recipes</h2>
       <div class="row center">
         <div class="col s12 m4">
             <div class="icon-block">
@@ -123,9 +135,21 @@
 
       </div><!-- ./container ends -->
 
+      <div class="row center">
+        <ul class="pagination">
+          <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!">4</a></li>
+          <li class="waves-effect"><a href="#!">5</a></li>
+          <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+      </div>
 
-   <!--   <div style="height:500px"></div>-->
-      <!--Import jQuery before materialize.js-->
+
+   <div style="height:100px"></div>
+         <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
