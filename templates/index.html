@@ -18,47 +18,38 @@
 
   <body>
 
-    <div class="container"><!-- ./container begins -->
+    
 
       <!-- MOBILE COLLAPSE -->
-      <nav>
-      <div class="nav-wrapper">
-          <a href="#!" class="brand-logo center">More Recipes</a>
+      <nav "light-red lighten-1" role="navigation">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">More Recipes</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="left hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="catalog.html">Recipes</a></li>
-        </ul>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="catalog.html">Recipes</a></li>
+          </ul>
 
-        <ul class="right hide-on-med-and-down">
-          <nav><div class="nav-wrapper">
-    <form>
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
-    </form>
-    <a href="review.html" class="btn-flat waves-effect waves-light blue-grey center"><span class="white-text">search</span></a>
-  </div>
-
-        </nav>
-
-        </ul>
-
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="catalog.html">Recipes</a></li>
-          <li><a href="index.html">Sign Out</a></li>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Sign Out</a></li>
             <li><a href="profile.html">Profile</a></li>
-        </ul>
-      </div>
-    </nav>
+          </ul>
 
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="catalog.html">Recipes</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class="container"><!-- ./container begins -->
 
       <br><br>
 
@@ -113,39 +104,29 @@
     <div class="row center">
       <div class="col s12 m4">
           <div class="icon-block">
-              <h2 class="center light-blue-text"></h2>
-              <img src="img/1.jpg" alt="" class="responsive-img circle" alt="">
-          </div>
-      </div>
-
-      <div class="col s12 m4">
-          <div class="icon-block">
-              <h2 class="center light-blue-text"></h2>
               <img src="img/2.jpg" alt="" class="responsive-img circle" alt="">
+             <div class="card red lighten-1"><p><b>African Delicacies that will make your mouth water</b></p></div>
           </div>
       </div>
 
       <div class="col s12 m4">
           <div class="icon-block">
-              <h2 class="center light-blue-text"></h2>
-              <img src="img/4.jpg" alt="" class="responsive-img circle" alt="">
-            </div>
+              <img src="img/2.jpg" alt="" class="responsive-img circle" alt="">
+             <div class="card red lighten-1"><p><b>African Delicacies that will make your mouth water</b></p></div>
           </div>
       </div>
+
+      <div class="col s12 m4">
+          <div class="icon-block">
+              <img src="img/2.jpg" alt="" class="responsive-img circle" alt="">
+             <div class="card red lighten-1"><p><b>African Delicacies that will make your mouth water</b></p></div>
+          </div>
+        </div>
+
+      </div><!-- ./row ends -->
 
     </div><!-- ./container ends -->
 
-    <div class="row center">
-      <ul class="pagination">
-        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="active"><a href="#!">1</a></li>
-        <li class="waves-effect"><a href="#!">2</a></li>
-        <li class="waves-effect"><a href="#!">3</a></li>
-        <li class="waves-effect"><a href="#!">4</a></li>
-        <li class="waves-effect"><a href="#!">5</a></li>
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-      </ul>
-    </div>
 
 
  <div style="height:100px"></div>
@@ -156,10 +137,48 @@
     <script>$('.button-collapse').sideNav();</script>
 
 
-   <footer>
+ <!--  <footer>
   <p> 
   Copyright &copy; 2017 Pascal Ulor. Do not copy or try to reproduce
   </p>
+</footer>-->
+    <footer class="page-footer blue-grey">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">More Recipes</h5>
+        <p class="grey-text text-lighten-4">We are a team of chefs working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Settings</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made by <a class="orange-text text-lighten-3" href="http://materializecss.com"><p> 
+  Copyright &copy; 2017 Pascal Ulor. Do not copy or try to reproduce
+  </p></a>
+    </div>
+  </div>
 </footer>
+
   </body>
 </html>
