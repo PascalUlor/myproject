@@ -38,6 +38,7 @@ app.get('/api/recipes/:id', function(req, res) {
     }
 });
 
+//POST route
 app.post('/api/recipes', function(req, res) {
     let meal = req.body;
  console.log("meal----->",meal.id);
@@ -51,6 +52,22 @@ app.post('/api/recipes', function(req, res) {
     res.send(result);
 });
 
+//PUT route
+app.put('/recipes/:id', (req, res) => {
+    let id = parseInt(req.params.id, 10);
+    let existingMeal = recipes.filter(r => r.id === id)[0];
+ 
+    if (!existingMeal) {
+        let item = req.body;
+        item.id = id;
+        recipes.push(meal);
+        res.setHeader('Location', `/recipes/${id}`);
+        res.sendStatus(201);
+    } else {
+        existingMeal.name = req.body.name;
+        res.sendStatus(204);
+    }
+});
 
 //API route
 app.get('/api', (req, res) => {

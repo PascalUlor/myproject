@@ -8,7 +8,7 @@ class Recipe {
     addRecipe(){
       let item = req.body;
       if (!item.id) {
-          return res.sendStatus(500);
+          return res.status(500);
       }
       recipes.push(item);
     }
