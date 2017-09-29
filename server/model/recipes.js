@@ -8,7 +8,8 @@ const recipes = [
             downVote: 10,
             favorites: 5,
             views: 50,
-            review:[]
+            review:[],
+            userId: 3
         },
 
         {
@@ -20,7 +21,8 @@ const recipes = [
             downVote: 27,
             favorites: 100,
             views: 200,
-            review:[]
+            review:[],
+            userId: 2
         },
         {
             id:1,
@@ -32,6 +34,7 @@ const recipes = [
             favorites: 100,
             views: 300,
             review:[]
+            userId: 1
         }
 
         
