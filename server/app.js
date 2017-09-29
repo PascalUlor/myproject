@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
 //Dummy variables
-const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
+// const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
 
 //Home page route
 app.get('/', (req, res) => {
