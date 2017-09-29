@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
 //Dummy variables
-// const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
+const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
 
 //Home page route
 app.get('/', (req, res) => {
@@ -39,16 +39,16 @@ app.get('/api/recipes/:id', function(req, res) {
 });
 
 app.post('/api/recipes', function(req, res) {
-    let item = req.body;
- console.log("item----->",item.id);
-    if (!item.id) {
+    let meal = req.body;
+ console.log("meal----->",meal.id);
+    if (!meal.id) {
         console.log('get here')
         return res.sendStatus(500);
     }
  
-    recipes.push(item);
- 
-    res.send('/api/recipes/' + item.id);
+    recipes.push(meal);
+    let result = recipes.filter(m => m.id === meal.id)[0];
+    res.send(result);
 });
 
 
