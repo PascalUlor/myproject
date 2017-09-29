@@ -58,8 +58,8 @@ app.put('/recipes/:id', (req, res) => {
     let existingMeal = recipes.filter(r => r.id === id)[0];
  
     if (!existingMeal) {
-        let item = req.body;
-        item.id = id;
+        let meal = req.body;
+        meal.id = id;
         recipes.push(meal);
         res.setHeader('Location', `/recipes/${id}`);
         res.sendStatus(201);
