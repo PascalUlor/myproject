@@ -8,8 +8,7 @@ const recipes = [
             downVote: 10,
             favorites: 5,
             views: 50,
-            review:[],
-            userId: 3
+            review:[]
         },
 
         {
@@ -21,9 +20,9 @@ const recipes = [
             downVote: 27,
             favorites: 100,
             views: 200,
-            review:[],
-            userId: 2
+            review:[]
         },
+
         {
             id:1,
             title:'Afang Soup',
@@ -34,8 +33,7 @@ const recipes = [
             favorites: 100,
             views: 300,
             review:[]
-            userId: 1
-        }
+        },
 
         
 ]
