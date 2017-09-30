@@ -53,7 +53,7 @@ app.post('/api/recipes', function(req, res) {
 });
 
 //PUT route
-app.put('/recipes/:id', (req, res) => {
+app.put('/api/recipes/:id', (req, res) => {
     let id = parseInt(req.params.id, 10);
     let existingMeal = recipes.filter(r => r.id === id)[0];
  
@@ -61,7 +61,7 @@ app.put('/recipes/:id', (req, res) => {
         let meal = req.body;
         meal.id = id;
         recipes.push(meal);
-        res.setHeader('Location', `/recipes/${id}`);
+        res.setHeader('Location', '/api/recipes/' + id);
         res.sendStatus(201);
     } else {
         existingMeal.name = req.body.name;
