@@ -23,6 +23,7 @@
         "jquery": true
     },
     "rules": {
+        "linebreak-style": ["error", "windows"],
         "one-var": 0,
         "semi": ["error", "always"],
         "eol-last": ["off", "always"],
@@ -45,9 +46,9 @@
         }],
         "require-jsdoc": ["error", {
             "require": {
-                "FunctionDeclaration": true,
-                "MethodDefinition": true,
-                "ClassDeclaration": true
+                "FunctionDeclaration": false,//true
+                "MethodDefinition": false,
+                "ClassDeclaration": false
             }
         }]
     }
