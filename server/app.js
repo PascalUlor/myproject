@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
+import recipesRoute from '../server/routes/reciperoutes';
 
 const app = express();
 
@@ -10,10 +11,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
-//Dummy variables
-const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
+// Dummy variables
+// const recipes = [{id: 1, name:'goat meat'}, {id: 2, name:'bitter leaf'}, {id: 3, name: 'palm oil'}]
 
-//Home page route
+// Home page route
 app.get('/', (req, res) => {
     res.status(200);
     res.json({
@@ -22,76 +23,79 @@ app.get('/', (req, res) => {
     });
 });
 
-//Recipes Route
-app.get('/api/recipes', function(req, res) {
-    res.send(recipes);
-});
- 
-app.get('/api/recipes/:id', function(req, res) {
-  let id = parseInt(req.params.id, 10);
-    let result = recipes.filter(r => r.id === id)[0];
- 
-    if (!result) {
-        res.sendStatus(404);
-    } else {
-        res.send(result);
-    }
-});
+// API Routes
+app.use('/api/', recipesRoute);
 
-//POST route
-app.post('/api/recipes', function(req, res) {
-    let meal = req.body;
- console.log("meal----->",meal.id);
-    if (!meal.id) {
-        console.log('get here')
-        return res.sendStatus(500);
-    }
- 
-    recipes.push(meal);
-    let result = recipes.filter(m => m.id === meal.id)[0];
-    res.send(result);
-});
+// // Recipes Get Route
+// app.get('/api/recipes', (req, res)=> {
+//     res.send(recipes);
+// });
 
-//PUT route
-app.put('/api/recipes/:id', (req, res) => {
-    let id = parseInt(req.params.id, 10);
-    let existingMeal = recipes.filter(r => r.id === id)[0];
- 
-    if (!existingMeal) {
-        let meal = req.body;
-        meal.id = id;
-        recipes.push(meal);
-        res.setHeader('Location', '/api/recipes/' + id);
-        res.sendStatus(201);
-    } else {
-        existingMeal.name = req.body.name;
-        res.sendStatus(204);
-    }
-});
+// app.get('/api/recipes/:id', (req, res) => {
+//     let id = parseInt(req.params.id, 10);
+//     let result = recipes.filter(r => r.id === id)[0];
 
-//API route
-app.get('/api', (req, res) => {
-    res.status(200);
-    res.json({
-        name: 'Pascal',
-        message: 'Welcome to More-Recipes'
-    });
-});
+//     if (!result) {
+//         res.sendStatus(404);
+//     } else {
+//         res.send(result);
+//     }
+// });
 
-app.post('/api',(req,res)=>{
-    console.log('This is a recipe site');
-    res.send(req.body);
-});
+// POST route
+// app.post('/api/recipes', (req, res) => {
+//     let meal = req.body;
+//     console.log('meal----->', meal.id);
+//     if (!meal.id) {
+//         console.log('get here');
+//         return res.sendStatus(500);
+//     }
 
-app.delete('*',(req,res)=>{
-    console.log('Item deleted from recipe site');
-});
+//     recipes.push(meal);
+//     let result = recipes.filter(m => m.id === meal.id)[0];
+//     res.send(result);
+// });
 
-app.put('*',(req,res)=>{
-    console.log('Item added from recipe site');
-});
+// PUT route
+// app.put('/api/recipes/:id', (req, res) => {
+//     let id = parseInt(req.params.id, 10);
+//     let existingMeal = recipes.filter(r => r.id === id)[0];
 
-//Trivial Route
+//     if (!existingMeal) {
+//         let meal = req.body;
+//         meal.id = id;
+//         recipes.push(meal);
+//         res.setHeader('Location', `/api/recipes/ ${id}`);
+//         res.sendStatus(201);
+//     } else {
+//         existingMeal.name = req.body.name;
+//         res.sendStatus(204);
+//     }
+// });
+
+// API route
+// app.get('/api', (req, res) => {
+//     res.status(200);
+//     res.json({
+//         name: 'Pascal',
+//         message: 'Welcome to More-Recipes'
+//     });
+// });
+
+// app.post('/api', (req, res) => {
+//     console.log('This is a recipe site');
+//     res.send(req.body);
+// });
+
+// app.delete('*', (req, res) => {
+//     console.log('Item deleted from recipe site');
+// });
+
+// app.put('*', (req, res) => {
+//     console.log('Item added from recipe site');
+// });
+
+// Trivial Route
 app.get('*', (req, res) => {
     res.status(200);
     res.json({
@@ -101,6 +105,5 @@ app.get('*', (req, res) => {
 });
 
 
-
-//Port listener
+// Port listener
 app.listen(port, () => console.log(`Application started on port ${port}`));
