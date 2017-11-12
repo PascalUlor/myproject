@@ -1,4 +1,5 @@
 import modelData from '../model/recipes';
+import reviewsData from '../model/reviews'
 
 /**
  * Class implementation for /api/recipes routes
@@ -160,6 +161,50 @@ export default class recipesController {
             res.json({
                 status: 'failed',
                 message: 'No recipes available'
+            });
+        }
+    }
+    /**
+     * Adds review for a particular recipe to the reviews model
+     * @param {obj} req
+     * @param {obj} res
+     * @returns {obj} insertion error messages or success messages
+     */
+    static postReview(req, res) {
+        let newReviewId;
+
+        if (modelData.length === 0) {
+            newReviewId = 1;
+        } else {
+            newReviewId = (reviewsData[reviewsData.length - 1].id) + 1;
+        }
+        try {
+            if (parseInt(req.params.id, 10) in modelData.map(recipe => recipe.id)) {
+                reviewsData.push({
+                    id: newReviewId,
+                    reviewSubject: req.body.reviewSubject,
+                    vote: req.body.vote,
+                    userId: 2,
+                    recipeId: 2
+                });
+                res.status(201);
+                res.json({
+                    status: 'successful',
+                    message: 'successful',
+                    reviewsData
+                });
+            } else {
+                res.status(400);
+                res.json({
+                    status: 'failed',
+                    message: 'No reviews available'
+                });
+            }
+        } catch (e) {
+            res.status(500);
+            res.json({
+                status: 'Failed',
+                message: 'Error adding review'
             });
         }
     }
