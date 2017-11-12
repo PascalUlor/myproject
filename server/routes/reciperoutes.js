@@ -12,4 +12,7 @@ router.route('/recipes/:id')
     .put(recipesController.updateRecipe)
     .delete(recipesController.deleteRecipe);
 
+router.route('/recipes/:id/reviews')
+    .post(recipesController.postReview);
+
 export default router;
