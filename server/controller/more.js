@@ -62,7 +62,7 @@ export default class recipesController {
                     res.status(200);
                     res.json({
                         status: 'successfull',
-                        message: 'update successful',
+                        message: `update successful ${i}th item in array`,
                         modelData
                     });
                 } else {
@@ -79,5 +79,88 @@ export default class recipesController {
             status: 'failed',
             message: 'Recipe ID does not exist'
         });
+    }
+    /**
+     * DELETE a particular recipe from modelData
+     * @param {obj} req
+     * @param {obj} res
+     * @returns {obj} insert success message
+     */
+    static deleteRecipe(req, res) {
+        if (parseInt(req.params.id, 10) in modelData.map(recipe => recipe.id)) {
+            const newRecipeCatalog = modelData.filter(recipe => recipe.id !== parseInt(req.params.id, 10));
+            res.status(200);
+            res.json({
+                status: 'successful',
+                messsage: 'successfully deleted',
+                newRecipeCatalog
+            });
+        } else {
+            res.status(400);
+            res.json({
+                status: 'failed',
+                message: 'Recipe ID does not exist'
+            });
+        }
+    }
+    /**
+     * Retrieve all available recipe
+     * @param {obj} req
+     * @param {obj} res
+     * @returns {obj} insert success message
+     */
+    static getRecipe(req, res) {
+        if (modelData.length !== 0) {
+            if (!req.query.sort) {
+                res.status(200);
+                res.json({
+                    status: 'successful',
+                    message: 'Successfully retrieved all data',
+                    modelData
+                });
+            } else if (req.query.sort === 'upVotes') {
+                if (req.query.order === 'des') {
+                    modelData.sort((a, b) => b.upVote - a.upVote);
+                    res.status(200);
+                    res.json({
+                        status: 'successful',
+                        message: 'Successfully retrieved all sorted data',
+                        modelData
+                    });
+                } else {
+                    modelData.sort((a, b) => a.upVote - b.upVote);
+                    res.status(200);
+                    res.json({
+                        status: 'successful',
+                        message: 'Successfully retrieved all sorted data',
+                        modelData
+                    });
+                }
+            } else if (req.query.sort === 'downVote') {
+                if (req.query.order === 'des') {
+                    modelData.sort((a, b) => b.downVote - a.downVote);
+                    res.status(200);
+                    res.json({
+                        status: 'successful',
+                        message: 'Successfully retrieved all sorted data',
+                        modelData
+                    });
+                } else {
+                    modelData.sort((a, b) => a.downVote - b.downVote);
+                    res.status(200);
+                    res.json({
+                        status: 'successful',
+                        message: 'Successfully retrieved all sorted data',
+                        modelData
+                    });
+                }
+            }
+        } else {
+            res.status(400);
+            res.json({
+                status: 'failed',
+                message: 'No recipes available'
+            });
+        }
     }
 }// End of RecipeClass
