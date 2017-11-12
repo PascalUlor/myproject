@@ -5,9 +5,11 @@ const router = express.Router();
 
 // Route for all recipe verbs
 router.route('/recipes')
-    .post(recipesController.addRecipe);
+    .post(recipesController.addRecipe)
+    .get(recipesController.getRecipe);
 
 router.route('/recipes/:id')
-    .put(recipesController.updateRecipe);
+    .put(recipesController.updateRecipe)
+    .delete(recipesController.deleteRecipe);
 
 export default router;
