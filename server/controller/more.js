@@ -1,5 +1,5 @@
 import modelData from '../model/recipes';
-import reviewsData from '../model/reviews'
+import reviewsData from '../model/reviews';
 
 /**
  * Class implementation for /api/recipes routes
@@ -25,7 +25,7 @@ export default class recipesController {
             modelData.push({
                 id: newDataId,
                 title: req.body.title,
-                ingridient: req.body.ingridient,
+                ingredient: req.body.ingredient,
                 description: req.body.description,
                 upVote: 30,
                 downVote: 10,
@@ -53,12 +53,12 @@ export default class recipesController {
      * @returns {obj} with success or error message
      */
     static updateRecipe(req, res) {
-        const { title, ingridient, description } = req.body;
+        const { title, ingredient, description } = req.body;
         for (let i = 0; i < modelData.length; i += 1) {
             if (modelData[i].id === parseInt(req.params.id, 10)) {
-                if (title || ingridient || description) {
+                if (title || ingredient || description) {
                     modelData[i].title = (title) || modelData[i].title;
-                    modelData[i].ingridient = (ingridient) || modelData[i].ingridient;
+                    modelData[i].ingredient = (ingredient) || modelData[i].ingredient;
                     modelData[i].description = (description) || modelData[i].description;
                     res.status(200);
                     res.json({

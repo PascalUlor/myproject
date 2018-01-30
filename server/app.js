@@ -107,3 +107,4 @@ app.get('*', (req, res) => {
 
 // Port listener
 app.listen(port, () => console.log(`Application started on port ${port}`));
+export default app;
