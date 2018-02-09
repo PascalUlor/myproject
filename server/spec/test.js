@@ -25,4 +25,45 @@ describe('All test cases for application', () => {
                 });
         });
     });
+
+    describe('Test Case For Invalid Routes', () => {
+        it('Should return a message when an invalid route is accessed', (done) => {
+            request
+                .get('/api/v1/some-rubbish')
+                .set('Connection', 'keep alive')
+                .set('Content-Type', 'application/json')
+                .expect(404)
+                .end((err, res) => {
+                    expect(res.status).to.equal(404);
+                    expect(res.body.message).to.equal('Invalid routes');
+                    done();
+                });
+        });
+
+        it('should fail to get route', (done) => {
+            request.get('/api/v1')
+                .set('Contet-Type', 'application/json')
+                .expect(404)
+                .end((err, res) => {
+                    expect(res.body).deep.equal({
+                        message: 'Invalid routes'
+                    });
+                    if (err) done(err);
+                    done();
+                });
+        });
+
+        it('should return `404` page for all invalid routes', (done) => {
+            request.get('/more-recipes/recipes')
+                .set('Content-Type', 'application/json')
+                .expect(404)
+                .end((err, res) => {
+                    expect(res.body).deep.equal({
+                        message: 'Invalid routes'
+                    });
+                    if (err) done(err);
+                    done();
+                });
+        });
+    });
 });

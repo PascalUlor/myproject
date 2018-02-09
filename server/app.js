@@ -97,10 +97,8 @@ app.use('/api/', recipesRoute);
 
 // Trivial Route
 app.get('*', (req, res) => {
-    res.status(200);
-    res.json({
-        name: 'Pascal',
-        message: 'Welcome to More-Recipes'
+    res.status(404).json({
+        message: 'Invalid routes'
     });
 });
 
