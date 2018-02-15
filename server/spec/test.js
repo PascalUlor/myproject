@@ -34,8 +34,10 @@ describe('All test cases for application', () => {
                 .set('Content-Type', 'application/json')
                 .expect(404)
                 .end((err, res) => {
-                    expect(res.status).to.equal(404);
-                    expect(res.body.message).to.equal('Invalid routes');
+                    expect(res.body).deep.equal({
+                        message: 'Invalid routes'
+                    });
+                    if (err) done(err);
                     done();
                 });
         });

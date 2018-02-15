@@ -1,19 +1,18 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  var RecipeModel = sequelize.define('RecipeModel', {
-    Id: DataTypes.NUMBER,
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    ingredient: DataTypes.STRING,
-    views: DataTypes.NUMBER,
-    upvote: DataTypes.NUMBER,
-    downvote: DataTypes.NUMBER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
-  return RecipeModel;
+export default (sequelize, DataTypes) => {
+    const RecipeModel = sequelize.define('RecipeModel', {
+        recipeId: { type: DataTypes.UUID, unique: true, primarykey: true },
+        title: { type: DataTypes.STRING, allowNull: false },
+        description: { type: DataTypes.STRING, allowNull: false },
+        ingredient: { type: DataTypes.STRING },
+        views: { type: DataTypes.NUMBER },
+        upvote: { type: DataTypes.NUMBER },
+        downvote: { type: DataTypes.NUMBER }
+    }, {
+        classMethods: {
+            associate(models) {
+                // associations can be defined here
+            }
+        }
+    });
+    return RecipeModel;
 };
