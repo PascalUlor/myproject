@@ -11,6 +11,10 @@ export default (sequelize, DataTypes) => {
     }, {
         classMethods: {
             associate(models) {
+                user.hasMany(models.RecipeModel, {
+                    foreignKey: 'UserId',
+                    onDelete: 'CASCADE'
+                });
                 // associations can be defined here
             }
         }

@@ -4,12 +4,16 @@ export default (sequelize, DataTypes) => {
         title: { type: DataTypes.STRING, allowNull: false },
         description: { type: DataTypes.STRING, allowNull: false },
         ingredient: { type: DataTypes.STRING },
-        views: { type: DataTypes.NUMBER },
-        upvote: { type: DataTypes.NUMBER },
-        downvote: { type: DataTypes.NUMBER }
+        views: { type: DataTypes.INTEGER },
+        upvote: { type: DataTypes.INTEGER },
+        downvote: { type: DataTypes.INTEGER }
     }, {
         classMethods: {
             associate(models) {
+                RecipeModel.belongsTo(models.user, {
+                    foreignKey: 'UserId',
+                    onDelete: 'CASCADE'
+                });
                 // associations can be defined here
             }
         }

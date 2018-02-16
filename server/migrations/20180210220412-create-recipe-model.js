@@ -1,11 +1,6 @@
 module.exports = {
     up: (queryInterface, Sequelize) => queryInterface.createTable('RecipeModels', {
-        id: {
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
+
         recipeId: {
             type: Sequelize.UUID,
             allowNull: false,
@@ -24,13 +19,13 @@ module.exports = {
             type: Sequelize.STRING
         },
         views: {
-            type: Sequelize.NUMBER
+            type: Sequelize.INTEGER
         },
         upvote: {
-            type: Sequelize.NUMBER
+            type: Sequelize.INTEGER
         },
         downvote: {
-            type: Sequelize.NUMBER
+            type: Sequelize.INTEGER
         },
         createdAt: {
             allowNull: false,
