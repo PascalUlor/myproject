@@ -17,38 +17,45 @@
 
     <body>
 
-      <div class="container"><!-- ./container begins -->
+      
 
       <!-- MOBILE COLLAPSE -->
-      <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center">More Recipes</a>
+        <nav "light-red lighten-1" role="navigation">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">More Recipes</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="left hide-on-med-and-down">
-            <li><a href="catalog.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-          </ul>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="catalog.html">Recipes</a></li>
+            </ul>
 
-          <ul class="right hide-on-med-and-down">
-            <li><a href="index.html">Sign Out</a></li>
-            <li><a href="profile.html">Profile</a></li>
-          </ul>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.html">Sign Out</a></li>
+              <li><a href="profile.html">Profile</a></li>
+            </ul>
 
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="catalog.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-          </ul>
-        </div>
-      </nav>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="catalog.html">Recipes</a></li>
+              <li><a href="index.html">Sign Out</a></li>
+              <li><a href="profile.html">Profile</a></li>
+            </ul>
+          </div>
+        </nav>
+
+
+        <div class="container"><!-- ./container begins -->
 
       <br><br>
 
         <div class="card blue-grey"><!-- card container begins -->
           <div class="card-content white-text">
              <span class="card-title center">Welcome User</span>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione, aliquid minima autem tempora, dolor impedit quidem tempore dolorem magnam deserunt, illo. Perspiciatis, quia praesentium nihil illo asperiores dolor modi.</p>
+             <p>Hi and welcome! I’m Lindsay, and this little website is my internet home. I write, I cook, and I take pictures of delicious food.<br><br>On a more personal level, I’m constantly trying to learn how to be better at things that really matter, like living intentionally, appreciating people, and following Jesus.</p>
 
             <div class="row">
               <div class="col s4 offset-s4">
@@ -58,50 +65,177 @@
           </div>  
       </div><!-- card container ends -->
 
-      <div class="container">
-         <div class="input-field">
-           <input type="text" id="name">
-           <label class="active" for="name">Name</label>
-         </div>
 
-         <div class="input-field">
-           <input type="email" id="email" class="validate">
-           <label class="active" for="email">Email</label>
-         </div>
+      <div class="divider"></div>
+        <div class="section">
+          <h5>Basic Informations</h5>
+          <div class="row">
+            <div class="col s4 m4">
+              Name:
+            </div>
+            <div class="col s4 m4">
+              <div class="input-field">
+              <input type="text" id="name">
+           <label class="active" for="name">First Name</label>
+              </div>
+            </div>
+            <div class="col s4 m4">
+              <div class="input-field">
+              <input type="text" id="name">
+           <label class="active" for="name">Last Name</label>
+              </div>
+            </div>
+          </div><!--Name ends-->
 
-         <div class="input-field">
-           <textarea type="email" id="textarea" class="materialize-textarea"></textarea>
-           <label class="active" for="textarea">About User</label>
-         </div>
+            <div class="row">
 
-      </div>
+            <div class="col s2 m4">
+              Email:
+            </div>
+            <div class="col s2 m4">
+              <div class="input-field">
+               <input type="email" id="email" class="validate">
+               <label class="active" for="email">Email</label>
+             </div>
+            </div>
+            
+            </div><!--Email ends-->
 
 
-      <!-- FIXED ACTION BUTTON -->
-        <div class="fixed-action-btn">
-          <a href="#" class="btn-floating red btn-large"><i class="large material-icons">mode_edit</i></a>
-          <ul>
-            <li><a href="review.html" class="btn-floating yellow btn-large"><i class="large material-icons">details</i></a></li>
-            <li><a href="fav.html" class="btn-floating blue btn-large"><i class="large material-icons">favorite</i></a></li>
-            <li><a href="crud.html" class="btn-floating green btn-large"><i class="large material-icons">publish</i></a></li>
-            <li><a href="#" class="btn-floating orange btn-large"><i class="large material-icons">attach_file</i></a></li>
-          </ul>
+            <div class="row">
+
+            <div class="col s2 m4">
+              Phone Number:
+            </div>
+            <div class="col s2 m4">
+              <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+              </div>
+            </div>
+            
+            </div>
+
+
+        
+          </div><!--BAsic section ends-->
+        <div class="divider"></div>
+        <div class="section">
+          <h5>About User</h5>
+          <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
         </div>
+        </div>
+          
+
+
+
+      
+
+      <!-- Edit Profile -->
+  
+              <a href="#modal1" id="download-button" class="btn-large waves-effect waves-light orange modal-trigger">Edit Profile</a>
+
+              <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Edit Profile</h4>
+            <form class="">
+                <div class="input-field">
+                    <input type="text" id="name">
+                    <label class="active" for="name">Name</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" id="email" class="validate">
+                    <label class="active" for="email">Email</label>
+                </div>
+
+                <div class="input-field">
+                    <textarea type="email" id="textarea" class="materialize-textarea"></textarea>
+                    <label class="active" for="textarea">Password</label>
+                </div>
+
+                <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+              </div>
+
+              </form>
+
+          </div>
+
+                <div class="modal-footer">
+                    <div class="row center">
+                        <a href="review.html" id="download-button" class="modal-action modal-close btn-large waves-effect waves-light orange">Update</a>
+                    </div>
+                  </div>
+                
+        </div>
+
+
+
+        <!-- FIXED ACTION BUTTON -->
+          <div class="fixed-action-btn">
+            <a href="#" class="btn-floating red btn-large"><i class="large material-icons">mode_edit</i></a>
+            <ul>
+              <li><a href="review.html" class="btn-floating yellow btn-large"><i class="large material-icons">details</i></a></li>
+              <li><a href="fav.html" class="btn-floating blue btn-large"><i class="large material-icons">favorite</i></a></li>
+              <li><a href="crud.html" class="btn-floating green btn-large"><i class="large material-icons">publish</i></a></li>
+              <li><a href="#" class="btn-floating orange btn-large"><i class="large material-icons">attach_file</i></a></li>
+            </ul>
+          </div>
 
       </div><!-- ./container ends -->
 
 
-      <!--   <div style="height:500px"></div>-->
+         <div style="height:100px"></div>
     <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
       <script>$('.button-collapse').sideNav();</script>
+      <script >$(document).ready(function() {Materialize.updateTextFields();});</script>
+
+      <footer class="page-footer blue-grey">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">More Recipes</h5>
+          <p class="grey-text text-lighten-4">We are a team of chefs working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
-      <footer>
-      <p> 
-      Copyright &copy; 2017 Pascal Ulor. Do not copy or try to reproduce
-      </p>
-      </footer>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com"><p> 
+    Copyright &copy; 2017 Pascal Ulor. Do not copy or try to reproduce
+    </p></a>
+      </div>
+    </div>
+  </footer>
     </body>
   </html>
